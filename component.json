@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "componentizr/angular": "*",
+    "componentizr/angular-route": "*",
+    "componentizr/angular-animate": "*"
+  },
+  "local": [
+    "website"
+  ],
+  "paths": [
+    "./components",
+    "./modules"
+  ],
+  "remotes": []
+}
