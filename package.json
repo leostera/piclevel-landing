@@ -1,0 +1,24 @@
+{
+  "name": "piclevel-landing",
+  "version": "0.1.0",
+  "description": "",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/leostera/piclevel-landing.git"
+  },
+  "author": "Leandro Ostera <me@leostera.com>",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/leostera/piclevel-landing/issues"
+  },
+  "homepage": "https://github.com/leostera/piclevel-landing",
+  "dependencies": {
+    "component-builder": "~0.10.0"
+  }
+}

@@ -12,3 +12,19 @@ body {
   background-color: transparent;
 }
 
+.transition (@transition) {
+  -webkit-transition: @transition;
+  -moz-transition: @transition;
+  -o-transition: @transition;
+  transition: @transition;
+}
+
+.intro {
+  float: left;
+  .transition(1s ease all);
+  opacity: 0;
+}
+
+.intro.active {
+  opacity: 1;
+}
