@@ -11,7 +11,10 @@ angular.module('website')
       priority: 0,
       restrict: 'E',
       template: ''
-        +'<img ng-repeat="bg in backgrounds" src="{{bg.url}}" ng-if="bg.id===$parent.active">'
+        +'<div ng-repeat="bg in backgrounds"'
+        +' class="background"'
+        +' style="background: white url({{bg.url}}) no-repeat fixed center"'
+        +' ng-if="bg.id===$parent.active"></div>'
       , link: function(scope, element, attr) {
         scope.backgrounds = [1,2,3,4,5,6,7,8,9].map(function (id) {
           return {url: '/build/website/images/'+id+'.jpg', id: id};
@@ -20,15 +23,10 @@ angular.module('website')
         function newActive (time) {
           $timeout(function () {
             time = time || 500;
-            last = scope.active;
-            console.log("Fading...", scope.active);
+            last = scope.active || 0;
             scope.active = -1;
             $timeout(function () {
-              do {
-                scope.active = Math.floor((Math.random()*scope.backgrounds.length))+1
-                scope.active = scope.active%scope.backgrounds.length+1;
-              } while (last === scope.active);
-              console.log("Showing...", scope.active);
+              scope.active = (last+1)%scope.backgrounds.length+1;
             }, time);
           });
         }

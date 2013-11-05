@@ -10,6 +10,8 @@
 
 body {
   background-color: transparent;
+  max-height: 100%;
+  overflow-x: hidden;
 }
 
 .transition (@transition) {
@@ -19,21 +21,32 @@ body {
   transition: @transition;
 }
 
-img {
+.background {
+  width: 100%;
+  height: 100%;
+  display: block;
   float: left;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover !important;
 }
 
-  img.ng-enter
-, img.ng-leave {
+  .background.ng-enter
+, .background.ng-leave {
   .transition(all ease 1s);
 }
 
-  img.ng-enter
-, img.ng-leave.ng-leave-active  {
+  .background.ng-enter
+, .background.ng-leave.ng-leave-active  {
   opacity: 0;
 }
 
-  img.ng-enter.ng-enter-active
-, img.ng-leave {
+  .background.ng-enter.ng-enter-active
+, .background.ng-leave {
   opacity: 1;
 }
