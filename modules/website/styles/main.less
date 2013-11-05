@@ -1,52 +1,96 @@
+@device-with: 228px;
+
 @font-face {
-  font-family: Aracne;
-  src: url(/build/website/fonts/aracne.otf) format('opentype');
+  font-family: "Aracne";
+  src: url(/build/website/fonts/aracne.ttf) format('truetype');
 }
 
 @font-face {
-  font-family: Flower;
+  font-family: "Flower";
   src: url(/build/website/fonts/flower.ttf) format('truetype');
 }
 
 body {
   background-color: transparent;
   max-height: 100%;
-  overflow-x: hidden;
+  min-height: 600px;
+  font-size: 0.8m;
 }
 
-.transition (@transition) {
-  -webkit-transition: @transition;
-  -moz-transition: @transition;
-  -o-transition: @transition;
-  transition: @transition;
-}
-
-.background {
+header {
   width: 100%;
-  height: 100%;
   display: block;
-  float: left;
+  height: 8em;
+}
+
+h1, h3 {
   margin: 0;
   padding: 0;
+}
+
+h1 {
+  float: left;
+  font-family: "Aracne";
+  font-size: 8em;
+  margin-top: -15px;
+}
+
+h3 {
+  float: left;
+  font-family: "Flower";
+  font-size: 2em;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  word-break: break-word;
+  min-width: @device-with;
+  width: 30%;
+}
+
+.graybox {
+  background-color: rgba(0,0,0,0.7);
+  color: whitesmoke;
+}
+
+.centered {
+  min-width: @device-with;
+  max-width: 428px;
+  width: 50%;
+  padding: 30px;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-size: cover !important;
+  margin: 0 auto;
+  top: 10%;
 }
 
-  .background.ng-enter
-, .background.ng-leave {
-  .transition(all ease 1s);
+form {
+  text-align: center;
 }
 
-  .background.ng-enter
-, .background.ng-leave.ng-leave-active  {
-  opacity: 0;
+input {
+  float: left;
+  min-width: 100px;
+  max-width: 280px;
+  width: 100%;
+  height: 50px;
+  margin: 6px;
+  margin-left: 0px;
+  padding: 10px;
+  font-size: 0.8em;
+  border: 0;
+  border-radius: 8px;
 }
 
-  .background.ng-enter.ng-enter-active
-, .background.ng-leave {
-  opacity: 1;
+
+button {
+  float: left;
+  margin: 5px;
+  margin-left: 0px;
+  border-radius: 8px;
+  padding: 8px;
+  font-family: "Aracne";
+  border: 0;
+  font-size: 2em;
+  letter-spacing: 6;
+  color: whitesmoke;
+  background-color: cadetblue;
 }

@@ -15,126 +15,59 @@
   transform: @transformation;
 }
 
-/**
- * fadeIn
- */
-.fade-in () {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes fadeIn { .fade-in() }
-@-moz-keyframes fadeIn { .fade-in() }
-@-o-keyframes fadeIn { .fade-in() }
-@keyframes fadeIn { .fade-in() }
-
-.fadeIn {
-  -webkit-animation: fadeIn 1s ease;
-  -moz-animation: fadeIn 1s ease;
-  -o-animation: fadeIn 1s ease;
-  animation: fadeIn 1s ease;
-  -webkit-animation-fill-mode: forwards;
-  -moz-animation-fill-mode: forwards;
-  -o-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
+.transition (@transition) {
+  -webkit-transition: @transition;
+  -moz-transition: @transition;
+  -o-transition: @transition;
+  transition: @transition;
 }
 
 /**
- * fadeInUp
+ * body transitions
  */
-.fade-in-up () {
-  0% {
-    opacity: 0;
-    .transform(translateY(20px));
-  }
-
-  100% {
-    opacity: 1;
-    .transform(translateY(0px));
-  }
+  .graybox.ng-enter
+, .graybox.ng-leave {
+  .transition(all ease .7s);
 }
 
-@-webkit-keyframes fadeInUp { .fade-in-up() }
-@-moz-keyframes fadeInUp { .fade-in-up() }
-@-o-keyframes fadeInUp { .fade-in-up() }
-@keyframes fadeInUp { .fade-in-up() }
-
-.fadeInUp {
-  -webkit-animation: fadeInUp 1s ease;
-  -moz-animation: fadeInUp 1s ease;
-  -o-animation: fadeInUp 1s ease;
-  animation: fadeInUp 1s ease;
-  -webkit-animation-fill-mode: forwards;
-  -moz-animation-fill-mode: forwards;
-  -o-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-
-/**
- * fadeInDown
- */
-.fade-in-down () {
-  0% {
-    opacity: 0;
-    .transform(translateY(-20px));
-  }
-
-  100% {
-    opacity: 1;
-    .transform(translateY(0px));
-  }
-}
-
-@-webkit-keyframes fadeInDown { .fade-in-down() }
-@-moz-keyframes fadeInDown { .fade-in-down() }
-@-o-keyframes fadeInDown { .fade-in-down() }
-@keyframes fadeInDown { .fade-in-down() }
-
-.fadeInDown {
-  -webkit-animation: fadeInDown 1s ease;
-  -moz-animation: fadeInDown 1s ease;
-  -o-animation: fadeInDown 1s ease;
-  animation: fadeInDown 1s ease;
-  -webkit-animation-fill-mode: forwards;
-  -moz-animation-fill-mode: forwards;
-  -o-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-
-/**
- * Delayers
- */
-.late-750 {
+  .graybox.ng-enter
+, .graybox.ng-leave.ng-leave-active  {
   opacity: 0;
-  .late(750ms);
 }
 
-.late-1500 {
+  .graybox.ng-enter.ng-enter-active
+, .graybox.ng-leave {
+  opacity: 1;
+}
+/**
+ * background transitions
+ */
+.background {
+  width: 100%;
+  height: 100%;
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover !important;
+}
+
+  .background.ng-enter
+, .background.ng-leave {
+  .transition(all ease .7s);
+}
+
+  .background.ng-enter
+, .background.ng-leave.ng-leave-active  {
   opacity: 0;
-  .late(1500ms);
 }
 
-.late-3000 {
-  opacity: 0;
-  .late(3000ms);
-}
-
-i.vimeo {
-  .late(1700ms);
-}
-
-i.at {
-  .late(1900ms);
-}
-
-i.tumblr {
-  .late(2100ms);
-}
-
-i.angellist {
-  .late(2300ms);
+  .background.ng-enter.ng-enter-active
+, .background.ng-leave {
+  opacity: 1;
 }
