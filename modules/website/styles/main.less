@@ -19,12 +19,21 @@ body {
   transition: @transition;
 }
 
-.intro {
+img {
   float: left;
-  .transition(1s ease all);
+}
+
+  img.ng-enter
+, img.ng-leave {
+  .transition(all ease 1s);
+}
+
+  img.ng-enter
+, img.ng-leave.ng-leave-active  {
   opacity: 0;
 }
 
-.intro.active {
+  img.ng-enter.ng-enter-active
+, img.ng-leave {
   opacity: 1;
 }
