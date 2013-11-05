@@ -24,9 +24,11 @@ angular.module('website')
           $timeout(function () {
             time = time || 500;
             last = scope.active || 0;
-            scope.active = -1;
+            console.log("Hiding",last, scope.active);
+            scope.active = false;
             $timeout(function () {
               scope.active = (last+1)%scope.backgrounds.length+1;
+              console.log("Showing",scope.active);
             }, time);
           });
         }
